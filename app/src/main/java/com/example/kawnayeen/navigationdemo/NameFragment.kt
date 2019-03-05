@@ -1,6 +1,6 @@
 package com.example.kawnayeen.navigationdemo
 
-
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -19,6 +19,9 @@ class NameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         nameTv.text = arguments?.getString("nameArg")
+        backToHelloWorld.setOnClickListener {
+            startActivity(Intent(context, HelloWorld::class.java))
+        }
     }
 
 
